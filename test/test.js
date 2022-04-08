@@ -1,8 +1,8 @@
+import EventEmitter from '../index.js';
+import assume from 'assume';
+
 describe('EventEmitter', function tests() {
   'use strict';
-
-  var EventEmitter = require('../')
-    , assume = require('assume');
 
   it('exposes a `prefixed` property', function () {
     assume(EventEmitter.prefixed).is.either([false, '~']);
@@ -12,12 +12,9 @@ describe('EventEmitter', function tests() {
     assume(EventEmitter.EventEmitter).equals(EventEmitter);
   });
 
-  it('inherits when used with `require("util").inherits`', function () {
-    function Beast() {
-      EventEmitter.call(this);
-    }
+  it('inherits when used with extends`', function () {
 
-    require('util').inherits(Beast, EventEmitter);
+    class Beast extends EventEmitter{};
 
     var moop = new Beast()
       , meap = new Beast();

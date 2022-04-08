@@ -3,6 +3,7 @@
   "version": "4.0.7",
   "description": "EventEmitter3 focuses on performance while maintaining a Node.js AND browser compatible interface.",
   "main": "index.js",
+  "type": "module",
   "typings": "index.d.ts",
   "scripts": {
     "browserify": "rm -rf umd && mkdir umd && browserify index.js -s EventEmitter3 -o umd/eventemitter3.js",
