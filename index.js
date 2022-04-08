@@ -323,16 +323,5 @@ EventEmitter.prototype.addListener = EventEmitter.prototype.on;
 //
 EventEmitter.prefixed = prefix;
 
-//
-// Allow `EventEmitter` to be imported as module namespace.
-//
-EventEmitter.EventEmitter = EventEmitter;
-
-//
-// Expose the module.
-//
-if ('undefined' !== typeof module) {
-  module.exports = EventEmitter;
-}
 
 export default EventEmitter;
